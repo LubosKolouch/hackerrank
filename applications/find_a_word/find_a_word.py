@@ -15,7 +15,8 @@ for _ in range(int(m)):
     count = 0
     what = input()
     for sentence in sentences:
-        re_what = r'(?:[^a-zA-Z_0-9]|^|\b)'+what+'(?:[^a-zA-Z_0-9]|$)'
+#        re_what = r'(?:[^a-zA-Z_0-9]|^|\b)'+what+'(?:[^a-zA-Z_0-9]|$)'
+        re_what = r'(?<![a-zA-Z_0-9])'+what+'(?![a-zA-Z_0-9])'
         finder = re.findall(re_what, sentence)
         if len(finder):
 #            print(re_what)
